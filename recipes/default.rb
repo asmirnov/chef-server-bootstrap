@@ -22,6 +22,7 @@ node.default[:chef_server_populator][:servername_override] = node[:chef_server_b
 node.default[:chef_server_populator][:clients][:'chef-admin'] = 'client_key_pub.pem'
 node.default[:chef_server_populator][:clients][:'chef-validator'] = 'validation_pub.pem'
 node.default[:'chef-server'][:configuration][:chef_server_webui][:enable] = false
+node.override['erchef']['s3_url_ttl'] = 1800
 
 # Create directory and put public keys there.
 # Forcing creation in compilation phase because chef-server-populator relies on
